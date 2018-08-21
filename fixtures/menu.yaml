@@ -1,0 +1,178 @@
+- model: menu.menu
+  pk: 1
+  fields:
+    name: Dessert Menu
+    description: Menu with desserts
+    created_at: 2018-08-21 18:24:22
+    modified_at: 2018-08-21 18:24:22
+- model: menu.menu
+  pk: 2
+  fields:
+    name: Beverage Menu
+    description: Beer, wine and juices collection
+    created_at: 2018-08-21 18:24:23
+    modified_at: 2018-08-21 18:24:23
+- model: menu.menu
+  pk: 3
+  fields:
+    name: Du Jour Menu
+    description: Menu of the day
+    created_at: 2018-08-21 18:24:24
+    modified_at: 2018-08-21 18:24:24
+- model: menu.menu
+  pk: 4
+  fields:
+    name: Standard Menu
+    description: Menu served normally
+    created_at: 2018-08-21 18:24:25
+    modified_at: 2018-08-21 18:24:25
+- model: menu.menu
+  pk: 5
+  fields:
+    name: Empty Menu
+    description: Menu without any dish added
+    created_at: 2018-08-21 18:24:26
+    modified_at: 2018-08-21 18:24:26
+- model: menu.dish
+  pk: 1
+  fields:
+    name: Tomato Soup
+    description: with rice
+    price: 10.00
+    preparation_time: '10:00'
+    is_vegetarian: False
+    menu_id: 4
+    created_at: 2018-08-21 18:24:27
+    modified_at: 2018-08-21 18:24:27
+- model: menu.dish
+  pk: 2
+  fields:
+    name: Onion Soup
+    description: with cheese
+    price: 12.00
+    preparation_time: '12:00'
+    is_vegetarian: False
+    menu_id: 4
+    created_at: 2018-08-21 18:24:28
+    modified_at: 2018-08-21 18:24:28
+- model: menu.dish
+  pk: 3
+  fields:
+    name: Spaghetti Pomodoro
+    description: contains tomatoes, olives, chilli and basil
+    price: 23.00
+    preparation_time: '22:00'
+    is_vegetarian: True
+    menu_id: 4
+    created_at: 2018-08-21 18:24:29
+    modified_at: 2018-08-21 18:24:29
+- model: menu.dish
+  pk: 4
+  fields:
+    name: Pasta with chicken
+    description: cooked slowly with seasonal veggies
+    price: 27.00
+    preparation_time: '32:00'
+    is_vegetarian: False
+    menu_id: 4
+    created_at: 2018-08-21 18:24:30
+    modified_at: 2018-08-21 18:24:30
+- model: menu.dish
+  pk: 5
+  fields:
+    name: Risotto
+    description: Arborio rice with shrimps and mushrooms
+    price: 25.00
+    preparation_time: '27:00'
+    is_vegetarian: True
+    menu_id: 4
+    created_at: 2018-08-21 18:24:31
+    modified_at: 2018-08-21 18:24:31
+- model: menu.dish
+  pk: 6
+  fields:
+    name: Apple pie
+    description: with ice-cream
+    price: 15.00
+    preparation_time: '7:00'
+    is_vegetarian: True
+    menu_id: 1
+    created_at: 2018-08-21 18:24:32
+    modified_at: 2018-08-21 18:24:32
+- model: menu.dish
+  pk: 7
+  fields:
+    name: Cheese cake
+    description: classic recipe
+    price: 13.00
+    preparation_time: '6:00'
+    is_vegetarian: True
+    menu_id: 1
+    created_at: 2018-08-21 18:24:33
+    modified_at: 2018-08-21 18:24:33
+- model: menu.dish
+  pk: 8
+  fields:
+    name: Beer X
+    description: Lager with strong taste of ... 
+    price: 8.00
+    preparation_time: '2:00'
+    is_vegetarian: True
+    menu_id: 2
+    created_at: 2018-08-21 18:24:34
+    modified_at: 2018-08-21 18:24:34
+- model: menu.dish
+  pk: 9
+  fields:
+    name: Beer Y
+    description: Ale brewed with top fermenting yeast ...
+    price: 8.00
+    preparation_time: '2:00'
+    is_vegetarian: True
+    menu_id: 2
+    created_at: 2018-08-21 18:24:35
+    modified_at: 2018-08-21 18:24:35
+- model: menu.dish
+  pk: 10
+  fields:
+    name: Orange juice 
+    description: freshly squeezed
+    price: 13.00
+    preparation_time: '8:00'
+    is_vegetarian: True
+    menu_id: 2
+    created_at: 2018-08-21 18:24:36
+    modified_at: 2018-08-21 18:24:36
+- model: menu.dish
+  pk: 11
+  fields:
+    name: Apple juice 
+    description: served with mint and ice
+    price: 6.00
+    preparation_time: '5:00'
+    is_vegetarian: True
+    menu_id: 2
+    created_at: 2018-08-21 18:24:37
+    modified_at: 2018-08-21 18:24:37
+- model: menu.dish
+  pk: 12
+  fields:
+    name: Soup of the day
+    description: depending on the day
+    price: 6.00
+    preparation_time: '15:00'
+    is_vegetarian: False
+    menu_id: 3
+    created_at: 2018-08-21 18:24:38
+    modified_at: 2018-08-21 18:24:38
+- model: menu.dish
+  pk: 13
+  fields:
+    name: Dish of the day
+    description: depending on the day
+    price: 26.00
+    preparation_time: '25:00'
+    is_vegetarian: False
+    menu_id: 3
+    created_at: 2018-08-21 18:24:39
+    modified_at: 2018-08-21 18:24:39
