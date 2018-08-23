@@ -9,8 +9,12 @@ a {
 .sorting {
     float:right;
 }
+.pagination button {
+    margin: 5px;
+}
+
  /* Dropdown Button */
-.dropbtn {
+.btn {
     background-color: #3498DB;
     color: white;
     padding: 16px;

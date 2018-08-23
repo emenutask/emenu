@@ -8,7 +8,8 @@ class List extends Component {
   state = {
     menus: [],
     sortingHumanName: 'id',
-    sortingName: null
+    next: null,
+    previous: null
   };
 
   constructor(props) {
@@ -25,15 +26,24 @@ class List extends Component {
     document.removeEventListener('click', this.handleClickOutside);
   };
 
-  getMenus(sorting) {
-    let url = 'http://127.0.0.1:8000/menu/';
-    if (sorting){
-      url = url.concat(`?ordering=${sorting}`);
+  getMenusUrl(sorting) {
+    let url = 'http://127.0.0.1:8000/menu/'
+      if (sorting){
+        url = url.concat(`?ordering=${sorting}`);
+      }
+    return url;
+  };
+
+  getMenus(url) {
+    if (!url) {
+      url = this.getMenusUrl();
     }
     fetch(url)
     .then(results  => { return results.json();})
     .then(data => this.setState({
       menus: data.results,
+      next: data.next,
+      previous: data.previous
     }))
   };
 
@@ -55,8 +65,13 @@ class List extends Component {
   };
 
   updateSorting(name, humanName) {
-    this.setState({sortingHumanName: humanName, sortingName: name});
-    this.getMenus(name);
+    this.setState({sortingHumanName: humanName});
+    const url = this.getMenusUrl(name);
+    this.getMenus(url);
+  };
+
+  updatePage(url) {
+    this.getMenus(url);
   };
 
   render() {
@@ -65,7 +80,7 @@ class List extends Component {
         <div className='sorting'>
           sort by
           <div className='dropdown'>
-            <button onClick={this.openDropdown} className='dropbtn'>{this.state.sortingHumanName}</button>
+            <button onClick={this.openDropdown} className='dropbtn btn'>{this.state.sortingHumanName}</button>
             <div id='myDropdown' className='dropdown-content'>
               <a onClick={() => this.updateSorting('name', 'names asc')}>name asc</a>
               <a onClick={() => this.updateSorting('-name', 'name desc')}>name desc</a>
@@ -84,6 +99,11 @@ class List extends Component {
             </Link>
           </div>
         ))}
+
+        <div className='pagination'>
+            {this.state.previous && <button className='btn' onClick={() => this.updatePage(this.state.previous)}>Previous page</button>}
+            {this.state.next && <button className='btn'  onClick={() => this.updatePage(this.state.next)}>Next page</button>}
+        </div>
       </div>
     );
   }
