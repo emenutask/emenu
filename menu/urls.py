@@ -4,8 +4,13 @@ from . import views
 
 urlpatterns = [
     url(
-        r'$',
+        r'^$',
         views.MenuList.as_view(),
-        name='user_api_menu'
+        name='menu_api'
+    ),
+    url(
+        r'^(?P<pk>[0-9]+)/$',
+        views.MenuDetail.as_view(),
+        name='menu_api_detail'
     ),
 ]
