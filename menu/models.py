@@ -7,6 +7,7 @@ class Menu(models.Model):
     description = models.TextField()
     created_at = models.DateTimeField('creation date', auto_now_add=True)
     modified_at = models.DateTimeField('last modification date', auto_now=True)
+    dishes_count = models.IntegerField(default=0, editable=False)
 
     class Meta:
         ordering = ('id',)

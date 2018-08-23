@@ -3,6 +3,7 @@
   fields:
     name: Dessert Menu
     description: Menu with desserts
+    dishes_count: 2
     created_at: 2018-08-21 18:24:22
     modified_at: 2018-08-21 18:24:22
 - model: menu.menu
@@ -10,6 +11,7 @@
   fields:
     name: Beverage Menu
     description: Beer, wine and juices collection
+    dishes_count: 4
     created_at: 2018-08-21 18:24:23
     modified_at: 2018-08-21 18:24:23
 - model: menu.menu
@@ -17,6 +19,7 @@
   fields:
     name: Du Jour Menu
     description: Menu of the day
+    dishes_count: 2
     created_at: 2018-08-21 18:24:24
     modified_at: 2018-08-21 18:24:24
 - model: menu.menu
@@ -24,6 +27,7 @@
   fields:
     name: Standard Menu
     description: Menu served normally
+    dishes_count: 5
     created_at: 2018-08-21 18:24:25
     modified_at: 2018-08-21 18:24:25
 - model: menu.menu
@@ -31,6 +35,7 @@
   fields:
     name: Empty Menu
     description: Menu without any dish added
+    dishes_count: 0
     created_at: 2018-08-21 18:24:26
     modified_at: 2018-08-21 18:24:26
 - model: menu.dish
