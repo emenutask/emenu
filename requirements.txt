@@ -3,3 +3,4 @@ psycopg2
 pyaml
 djangorestframework
 django-filter
+django-cors-headers
