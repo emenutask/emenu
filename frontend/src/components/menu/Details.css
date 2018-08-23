@@ -1,0 +1,9 @@
+h3 {
+    display: inline
+}
+.dish {
+    padding: 5px;
+}
+.price {
+    padding-left: 20px;
+}
