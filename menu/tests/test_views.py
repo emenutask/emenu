@@ -1,3 +1,4 @@
+import datetime
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -102,29 +103,29 @@ class MenuDetailTests(APITestCase):
             preparation_time='24:00'
         )
 
-        url = reverse('menu_api_detail')
+        url = reverse('menu_api_detail', kwargs={'pk': menu.id})
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             {
                 'id': menu.id,
-                'name': menu.name,
-                'description': menu.description,
-                'created_at': menu.created_at,
+                'name': 'Small menu',
+                'description': '',
+                'created_at': menu.created_at.isoformat()[:26] + 'Z',
                 'dish_set': [
                     {
-                        'id': dish1.id,
-                        'name': dish1.name,
-                        'description': dish1.description,
-                        'price': dish1.price
+                        'id': dish2.id,
+                        'name': 'Vegetarian dish',
+                        'description': 'nothing special',
+                        'price': '24.00'
                     },
                     {
-                        'id': dish2.id,
-                        'name': dish2.name,
-                        'description': dish2.description,
-                        'price': dish2.price
+                        'id': dish1.id,
+                        'name': 'Dish with meat',
+                        'description': 'nothing special',
+                        'price': '28.00'
                     },
                 ]
             },
-            response.data
+            response.json()
         )
